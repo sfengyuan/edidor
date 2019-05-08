@@ -334,6 +334,9 @@ ul {
     float       : left;
     margin-right: 0.16rem;
 }
+.article-tags li {
+    margin-bottom: 0.03rem;
+}
 
 .article-meta .icon-date {
     margin-right: 0.06rem;
