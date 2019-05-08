@@ -3,9 +3,9 @@
 
 name = "edidor"
 license = "MIT"
-licenselink = ""
-description = "editor like theme"
-homepage = ""
+licenselink = "https://github.com/jacobsun/edidor/blob/master/LICENSE"
+description = "a hugo theme that looks like editors"
+homepage = "https://github.com/jacobsun/edidor"
 tags = ["blog", "editor", "edidor"]
 features = ["personal"]
 min_version = 0.40
