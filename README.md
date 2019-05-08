@@ -1,6 +1,12 @@
 # Edidor
 A hugo theme that looks like an editor.
 
+# Demo
+[Live](http://ziox.xyz/)
+
+
+
+
 # Installation
 Inside the folder of your Hugo site run:
 
