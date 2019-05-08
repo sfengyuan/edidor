@@ -1,0 +1,34 @@
+<article class="article">
+    <h2 class="title"><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
+    <div class="article-meta clearfix">
+        <ul class="dates clearfix left">
+            <li class="icon-date"><i></i></li>
+            <li class="publish-date">
+                <time datetime="{{ .Date.Format "2006.01.02" }}">{{ .Date.Format "2006.01.02" }}</time>
+            </li>
+        </ul>
+        {{ with .Params.categories }}
+        <ul class="article-categories clearfix left">
+            {{ range . }}
+            <li>
+                <a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+        {{ with .Params.tags }}
+        <ul class="article-tags clearfix">
+            {{ range . }}
+            <li>
+                <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+    <div class="content">
+        {{ .Content }}
+    </div>
+
+</article>
+{{ partial "comment.html" . }}

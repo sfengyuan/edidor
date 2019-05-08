@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/spf13/hugoThemes#themetoml for an example
+
+name = "edidor"
+license = "MIT"
+licenselink = ""
+description = "editor like theme"
+homepage = ""
+tags = ["blog", "editor", "edidor"]
+features = ["personal"]
+min_version = 0.40
+
+[author]
+  name = "Jacob Sun"
+  homepage = "https://ziox.xyz/"

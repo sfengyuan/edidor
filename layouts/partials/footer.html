@@ -1,0 +1,30 @@
+<footer class="footer clearfix">
+    <ul class="social left clearfix">
+        <li><a class="author" href="#">{{ .Site.Params.Author }}</a></li>
+        {{ range $key, $val := .Site.Social }}
+        {{ if $val }}
+        <li>
+            <a class="icon-link" href="{{ $val }}"><i class="{{ $key }}"></i></a>
+        </li>
+        {{ end }}
+        {{ end }}
+        <li>
+            <a class="icon-link" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss">
+                <i class="rss"></i></a>
+        </li>
+    </ul>
+
+    <ul class="status right clearfix">
+        <li><a href="#">Posts: {{ len (where (where .Site.Pages "Section" "posts") "Params.hidden" "!=" true) }}</a>
+        </li>
+        <li><a href="#">Pages: {{ len (where (where .Site.Pages "Section" "page") "Params.hidden" "!=" true) }}</a></li>
+        <li><a href="#">{{ .Site.Language.Lang }}</a></li>
+        <li><a href="https://gohugo.io">Hugo, {{ $.Hugo.Version }}</a></li>
+        <li><a href="https://gohugo.io">Theme: Edidor</a></li>
+        <li>
+            <a href="#">Last build: <time
+                    datetime="{{ dateFormat "2006-01-02T15:04:05Z0700" $.Hugo.BuildDate | safeHTML }}">{{ dateFormat "2006-01-02T15:04:05Z0700" $.Hugo.BuildDate  | safeHTML }}</time>
+            </a>
+        </li>
+    </ul>
+</footer>

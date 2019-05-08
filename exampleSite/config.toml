@@ -1,0 +1,85 @@
+theme = "edidor"
+title = "Your site title"
+baseurl = "https://your site url.com"
+AuthorName = "Jon Doe"
+# place your logo file to ./static/images to set logo
+
+# i18n is not completed yet, help is appreciated.
+languageCode = "en"
+defaultContentLanguage = "en"
+# you may not need this
+hasCJKLanguage = true
+
+
+# ----- feel free change these settings, those are not tied to this theme --
+paginate = 5
+enableEmoji = true
+
+# to have better preview
+buildDrafts = "true"
+# helpful if you want to edit the site or theme code
+disableFastRender = true
+# --------------------------------------------------------------------------
+
+disqusShortname = "your disqus short name"
+
+# social link in the footer, change it to "" hide it
+[social]
+    github = " "
+    facebook = " "
+    twitter = " "
+    behance = " "
+    email = " "
+
+# content in the home page, you can embed html tag in description
+[params]
+    # will you use AuthorName if you leave it blank, but you can set it to arbitrary text to display
+    author = "You name"
+    title = "Title line"
+    description = "A hugo site using Edidor. <br/><br/> Ctrl+B toggle sidebar. "
+    # change it to false if you don't need syntax highlighting, and save a little bandwidth
+    isHighlightCode = true
+
+# menubar setting, feel free to customize it, can be deleted
+[[menu.main]]
+    name = "File"
+    url = "#"
+    weight = 1
+
+[[menu.main]]
+    name = "Edit"
+    url = "#"
+    weight = 2
+
+[[menu.main]]
+    name = "Selection"
+    url = "#"
+    weight = 3
+
+[[menu.main]]
+    name = "View"
+    url = "#"
+    weight = 4
+
+[[menu.main]]
+    name = "Help"
+    url = "#"
+    weight = 5
+
+# sub menu
+[[menu.main]]
+    parent = "File"
+    name = "open posts"
+    url = "/posts"
+    weight = 1
+[[menu.main]]
+    parent = "File"
+    name = "open categories"
+    url = "/categories"
+    weight = 10
+
+[[menu.main]]
+    parent = "File"
+    name = "open tags"
+    url = "/tags"
+    weight = 20

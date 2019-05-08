@@ -1,0 +1,17 @@
+prev_page:
+  other: "最新"
+
+next_page:
+  other: "更早"
+
+home:
+  other: "首页"
+
+archive:
+  other: "归档"
+
+tags:
+  other: "标签"
+
+about:
+  other: "关于"

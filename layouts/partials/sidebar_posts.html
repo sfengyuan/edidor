@@ -1,0 +1,5 @@
+<ul class="posts">
+    {{ range first 10 (where (where .Site.RegularPages.ByDate.Reverse "Section" "posts") "Params.hidden" "!=" true) }}
+    <li><a class="no-break" href='{{ .RelPermalink }}'>{{- .Title -}}</a></li>
+    {{ end }}
+</ul>

@@ -1,0 +1,22 @@
+{{ partial "head.html" . }}
+
+<body>
+    {{ partial "header.html" . }}
+    <div class="middle">
+        <nav class="sidebar">
+            {{ partial "sidebar_posts.html" . }}
+        </nav>
+        <main class="main">
+            <div class="wrapper">
+                <div class="intro">
+                    <img src="{{ "images/logo.svg" | absURL }}" alt="logo">
+                    <h2> 404 Page not found. </h2>
+                </div>
+            </div>
+        </main>
+    </div>
+    {{ partial "footer.html" . }}
+    {{ partial "js.html" . }}
+</body>
+
+</html>

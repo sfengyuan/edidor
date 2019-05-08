@@ -1,0 +1,19 @@
+<div class="pagination">
+    <ul class="clearfix">
+        <li class="left">
+            {{ if .Paginator.HasPrev }}
+            <a href="{{ .Paginator.Prev.URL }}" class="prev left">
+                {{ i18n "prev_page" }}
+            </a>
+            {{ end }}
+        </li>
+
+        <li class="right">
+            {{ if .Paginator.HasNext }}
+            <a href="{{ .Paginator.Next.URL }}" class="next right">
+                {{ i18n "next_page" }}
+            </a>
+            {{ end }}
+        </li>
+    </ul>
+</div>

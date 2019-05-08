@@ -1,0 +1,14 @@
+<ul>
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+    <li class="taxonomy-key">{{ $taxonomyname | humanize }}</li>
+    {{ range $key, $value := $taxonomy }}
+    {{ if $value.Count }}
+    <li>
+        <a href="{{$taxonomyname | absURL}}/{{ $key }}">{{ $key }}
+            <span class="count">{{ $value.Count }}</span>
+        </a>
+    </li>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+</ul>

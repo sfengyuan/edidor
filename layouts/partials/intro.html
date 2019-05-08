@@ -1,0 +1,15 @@
+<div class="intro">
+    <img src="{{ "images/logo.svg" | absURL }}" alt="logo">
+    <h2>
+        {{ with .Param "title" }}
+        {{ . }}
+        {{ else }}
+        {{ .Site.Title }}
+        {{ end }}
+    </h2>
+    <p>
+        {{ with .Param "description" }}
+        {{ . | safeHTML }}
+        {{ end }}
+    </p>
+</div>

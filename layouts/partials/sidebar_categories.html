@@ -1,0 +1,11 @@
+<ul>
+    {{ range $key, $value := .Site.Taxonomies.categories}}
+    {{ if $value.Count }}
+    <li>
+        <a href="{{"categories" | absURL}}/{{ $key }}">{{ $key }}
+            <span class="count">{{$value.Count}}</span>
+        </a>
+    </li>
+    {{ end }}
+    {{ end }}
+</ul>
