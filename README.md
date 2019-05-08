@@ -7,6 +7,7 @@ A hugo theme that looks like an editor.
 # Screenshot
 ![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/exampleSite/static/images/screenshot2.png)
 ![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/exampleSite/static/images/screenshot3.png)
+![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/exampleSite/static/images/screenshot4.png)
 
 
 
