@@ -75,6 +75,7 @@ ul {
 .header .menu .sub-menu a {
     color: #C6C6C7;
     padding: 0 0.32rem;
+    font-size: 0.12rem;
 }
 
 .header .menu>li:hover {
@@ -110,10 +111,9 @@ ul {
     top       : 100%;
     left      : 0;
     background: #1A1D21;
-    width     : 2.5rem;
+    width     : 2.2rem;
     box-shadow: 0 0.1em 0.5em 0 #060608;
     z-index   : 9999;
-    font-size: 0.12rem;
 }
 
 .header .menu>li {
@@ -447,10 +447,16 @@ ul {
     .status li:nth-last-child(2) {
         display: none;
     }
+    .sidebar {
+        width: 30%;
+    }
 }
 @media (max-width: 420px) {
     .status li:nth-last-child(3) {
         display: none;
+    }
+    .sidebar {
+        width: 35%;
     }
 }
 
@@ -458,6 +464,9 @@ ul {
     .menu li:first-child {
         float: none;
         margin: 0 -0.08rem;
+    }
+    .sidebar {
+        width: 40%;
     }
 }
 
