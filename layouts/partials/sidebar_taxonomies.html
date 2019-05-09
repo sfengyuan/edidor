@@ -4,7 +4,9 @@
     {{ range $key, $value := $taxonomy }}
     {{ if $value.Count }}
     <li>
-        <a href="{{$taxonomyname | absURL}}/{{ $key }}">{{ $key }}
+        <a href="{{$taxonomyname | absURL}}/{{ $key }}">
+            <i class="icon icon-{{$taxonomyname}}"></i>
+            {{ $key }}
             <span class="count">{{ $value.Count }}</span>
         </a>
     </li>

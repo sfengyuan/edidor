@@ -2,13 +2,14 @@
     <h2 class="title"><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
     <div class="article-meta clearfix">
         <ul class="dates clearfix left">
-            <li class="icon-date"><i></i></li>
+            <li><i class="icon icon-date"></i></li>
             <li class="publish-date">
                 <time datetime="{{ .Date.Format "2006.01.02" }}">{{ .Date.Format "2006.01.02" }}</time>
             </li>
         </ul>
         {{ with .Params.categories }}
         <ul class="article-categories clearfix left">
+            <li><i class="icon icon-categories"></i></li>
             {{ range . }}
             <li>
                 <a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
@@ -19,6 +20,7 @@
         {{ with .Params.tags }}
         <div class="clearfix"></div>
         <ul class="article-tags clearfix">
+            <li><i class="icon icon-tags"></i></li>
             {{ range . }}
             <li>
                 <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
