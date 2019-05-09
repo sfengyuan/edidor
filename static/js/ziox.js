@@ -43,7 +43,7 @@ document.body.addEventListener('mousedown', e => {
   }
 })
 document.body.addEventListener('touchstart', e => {
-  state.resizing = canResize(e.touches[0].clientX)
+  state.resizing = canResize(e.touches[0].clientX, 10)
 })
 document.body.addEventListener('touchmove', e => {
   if (state.resizing) {
@@ -72,8 +72,8 @@ function switchCursor () {
   }
 }
 
-function canResize (x) {
-  return Math.abs(x - pane.getBoundingClientRect().right) <= 4
+function canResize (x, threshold = 4) {
+  return Math.abs(x - pane.getBoundingClientRect().right) <= threshold
 }
 
 function resize (x) {
