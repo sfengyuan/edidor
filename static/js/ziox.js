@@ -1,20 +1,22 @@
+
 setPageHeight()
 
 function setPageHeight () {
   const middle = document.querySelector('.middle')
   const w = document.documentElement.clientWidth
   const h = document.documentElement.clientHeight
-  if (w <= 360) {
-    middle.style.height = `${h - 150}px`
+
+  if (w <= 290) {
+    middle.style.height = `${h - 120}px`
     return
   }
-  if (w <= 650) {
+  if (w <= 360) {
     middle.style.height = `${h - 90}px`
     return
   }
   middle.style.height = `${h - 60}px`
 }
-
+window.addEventListener('resize', throttle(setPageHeight, 500)) // eslint-disable-line
 const pane = document.querySelector('.sidebar')
 const main = document.querySelector('.main')
 const rect = pane.getBoundingClientRect()
@@ -51,7 +53,6 @@ document.body.addEventListener('touchmove', e => {
 
 document.addEventListener('keydown', e => {
   if (e.ctrlKey && e.keyCode === 66) {
-    console.log('keydown')
     pane.classList.toggle('hide')
     pane.style.width = state.originWidth + 'px'
     main.style.marginLeft = state.originWidth + 'px'
@@ -76,7 +77,6 @@ function canResize (x) {
 }
 
 function resize (x) {
-  console.log('x, rect.left', x, rect.left)
   let newWidth = x - rect.left
   if (newWidth <= 10) {
     pane.style.width = 0 + 'px'
@@ -88,4 +88,7 @@ function resize (x) {
   }
 }
 
+document.querySelector('.toggle-sidebar').addEventListener('click', e => {
+  pane.classList.toggle('hide')
+})
 document.querySelector('#cloak').classList.add('hide')

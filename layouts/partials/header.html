@@ -11,7 +11,7 @@
             </a>
             <ul class="sub-menu">
                 {{ range .Children }}
-                <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}{{ if eq .Name "Toggle Sidebar" }}toggle-sidebar{{ end }}">
                     <a href="{{ .URL }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
