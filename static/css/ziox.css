@@ -461,7 +461,7 @@ ul {
 }
 
 @media (max-width: 360px) {
-    .menu li:first-child {
+    .menu > li:first-child {
         float: none;
         margin: 0 -0.08rem;
     }
