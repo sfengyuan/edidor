@@ -20,7 +20,7 @@
         <li><a href="#">Pages: {{ len (where (where .Site.Pages "Section" "page") "Params.hidden" "!=" true) }}</a></li>
         <li><a href="#">{{ .Site.Language.Lang }}</a></li>
         <li><a href="https://gohugo.io">Hugo, {{ $.Hugo.Version }}</a></li>
-        <li><a href="https://gohugo.io">Theme: Edidor</a></li>
+        <li><a href="https://github.com/jacobsun/edidor">Theme: Edidor</a></li>
         <li>
             <a href="#">Last build: <time
                     datetime="{{ dateFormat "2006-01-02T15:04:05Z0700" $.Hugo.BuildDate | safeHTML }}">{{ dateFormat "2006-01-02T15:04:05Z0700" $.Hugo.BuildDate  | safeHTML }}</time>
