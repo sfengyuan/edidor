@@ -1,9 +1,10 @@
+{{ $title := .Data.Plural}}
+<h2><a class="terms-title" href="{{ $title | absURL }}"> {{ $title | humanize }} </a></h2>
 <ul class="terms-list">
-    {{ $data := .Data }}
     {{ range $key, $value := .Data.Terms.ByCount }}
     {{ if ($value.Name) }}
     <li>
-        <a href="{{ $data.Plural | absURL }}/{{ $value.Name | urlize }}">
+        <a href="{{ $title | absURL }}/{{ $value.Name | urlize }}">
             {{ $value.Name }} <span class="count">{{ $value.Count }}</span>
         </a>
     </li>

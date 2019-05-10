@@ -73,8 +73,8 @@ ul {
 }
 
 .header .menu .sub-menu a {
-    color: #C6C6C7;
-    padding: 0 0.32rem;
+    color    : #C6C6C7;
+    padding  : 0 0.32rem;
     font-size: 0.12rem;
 }
 
@@ -395,6 +395,10 @@ ul {
     line-height: 1;
 }
 
+a.terms-title {
+    border: none;
+}
+
 .terms-list a {
     border   : none;
     font-size: 0.16rem;
@@ -423,6 +427,7 @@ ul {
 .pagination a:hover {
     background: #383C43
 }
+
 /* prism toolbar */
 .code-toolbar>.toolbar a {
     border-bottom: none;
@@ -443,28 +448,33 @@ ul {
         display: none;
     }
 }
+
 @media (max-width: 525px) {
     .status li:nth-last-child(2) {
         display: none;
     }
+
     .sidebar {
         width: 30%;
     }
 }
+
 @media (max-width: 420px) {
     .status li:nth-last-child(3) {
         display: none;
     }
+
     .sidebar {
         width: 35%;
     }
 }
 
 @media (max-width: 360px) {
-    .menu > li:first-child {
-        float: none;
+    .menu>li:first-child {
+        float : none;
         margin: 0 -0.08rem;
     }
+
     .sidebar {
         width: 40%;
     }
@@ -475,6 +485,7 @@ ul {
         display: none;
     }
 }
+
 @media (max-width: 290px) {
     .footer .status {
         float: left;

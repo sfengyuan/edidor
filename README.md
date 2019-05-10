@@ -5,9 +5,9 @@ A hugo theme that looks like an editor.
 [Live](http://ziox.xyz/)
 
 # Screenshot
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/exampleSite/static/images/screenshot2.png)
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/exampleSite/static/images/screenshot3.png)
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/exampleSite/static/images/screenshot4.png)
+![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/exampleSite/static/images/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/exampleSite/static/images/tags.png)
+![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/exampleSite/static/images/comment.png)
 
 
 

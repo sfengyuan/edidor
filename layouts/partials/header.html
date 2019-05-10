@@ -1,7 +1,7 @@
 <div id="cloak"></div>
 <header class="header">
     <ul class="menu clearfix">
-        <li><a href="/" class="logo-link"><img class="logo" src="{{ "images/logo.svg" | absURL }}" alt=""></a></li>
+        <li><a href="{{ .Site.BaseURL }}" class="logo-link"><img class="logo" src="{{ "images/logo.svg" | absURL }}" alt=""></a></li>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
         {{ if .HasChildren }}

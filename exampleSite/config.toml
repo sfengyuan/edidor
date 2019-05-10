@@ -31,9 +31,9 @@ disqusShortname = "your disqus short name"
     behance = " "
     email = " "
 
-# content in the home page, you can embed html tag in description
+# author, title, description are used in the home page, you can embed html tag in description
 [params]
-    # will you use AuthorName if you leave it blank, but you can set it to arbitrary text to display
+    # will use AuthorName if you leave it blank, but you can set it to arbitrary text to display
     author = "You name"
     title = "Title line"
     description = "A hugo site using Edidor. <br/><br/> Ctrl+B toggle sidebar. "
