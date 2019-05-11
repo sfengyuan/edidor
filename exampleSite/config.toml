@@ -1,6 +1,6 @@
 theme = "edidor"
-title = "Your site title"
-baseurl = "https://your site url.com"
+title = "Edidor Demo"
+baseurl = "https://ziox.xyz"
 AuthorName = "Jon Doe"
 # place your logo file to ./static/images to set logo
 
@@ -34,8 +34,8 @@ disqusShortname = "your disqus short name"
 # author, title, description are used in the home page, you can embed html tag in description
 [params]
     # will use AuthorName if you leave it blank, but you can set it to arbitrary text to display
-    author = "You name"
-    title = "Title line"
+    author = "Ziox"
+    title = "ZIOX DEMO"
     description = "A hugo site using Edidor. <br/><br/> Ctrl+B toggle sidebar. "
     # change it to false if you don't need syntax highlighting, and save a little bandwidth
     isHighlightCode = true
