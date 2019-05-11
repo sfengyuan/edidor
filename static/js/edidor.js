@@ -24,9 +24,7 @@
     const w = document.documentElement.clientWidth
     const h = document.documentElement.clientHeight
 
-    if (w <= 290) {
-      middle.style.height = `${h - 120}px`
-    } else if (w <= 360) {
+    if (w <= 450) {
       middle.style.height = `${h - 90}px`
     } else {
       middle.style.height = `${h - 60}px`
@@ -106,7 +104,8 @@
   }
 
   function activeToggleMenu () {
-    document.querySelector('.toggle-sidebar').addEventListener('click', e => {
+    const toggle = document.querySelector('.toggle-sidebar')
+    toggle && toggle.addEventListener('click', e => {
       pane.classList.toggle('hide')
     })
   }

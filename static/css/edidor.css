@@ -17,6 +17,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: none !important;
+}
+
 button {
     background-color: none;
     border          : none;
@@ -26,6 +30,25 @@ ul {
     margin         : 0;
     padding        : 0;
     list-style-type: none;
+}
+
+hr {
+    margin: 0.24rem 0;
+    border: 0.005rem groove rgb(153, 204, 255);
+}
+
+pre,
+code {
+    font-size  : 0.12rem;
+    font-family: 'Fira Code', Inconsolata, 'Deja Vu Sans Mono', 'Source Code Pro', Consolas, monospace;
+    border     : 1px solid #101114;
+    background : #1A1C21;
+    box-shadow : 0px 1px 3px 2px #30343C;
+    padding    : 0.08rem 0.12rem;
+}
+
+code {
+    padding: 0.01rem 0.05rem;
 }
 
 .clearfix::after {
@@ -236,12 +259,6 @@ ul {
 
 .wrapper {
     padding : 0.2rem 0.3rem;
-    padding : 0.2rem 0.3rem;
-    position: absolute;
-    top     : 0;
-    right   : 0;
-    left    : 0;
-    bottom  : 0;
 }
 
 .main h1,
@@ -294,13 +311,7 @@ ul {
     margin-left    : 0.3rem;
 }
 
-.main pre {
-    font-size  : 0.12rem;
-    font-family: 'Fira Code', Inconsolata, 'Deja Vu Sans Mono', 'Source Code Pro', Consolas, monospace;
-    border     : 1px solid #101114;
-    background : #1A1C21;
-    box-shadow : 0px 1px 3px 2px #30343C;
-}
+
 
 /* post */
 .article {
@@ -325,15 +336,17 @@ ul {
     color: #C6C6C7;
 }
 
-.article-meta {
-    margin-bottom: 0.4rem;
-}
-
 .article-meta,
 .item-meta {
     font-size: 0.12rem;
-    color    : #939BAB;
 }
+
+.article-meta,
+.item-meta,
+.footnotes {
+    color: #939BAB;
+}
+
 
 .article-meta ul {
     list-style-type: none;
@@ -442,14 +455,17 @@ a.terms-title {
     margin-bottom: 0.16rem;
 }
 
-/*  */
+blockquote.twitter-tweet {
+    color: #C6C6C7;
+}
+
 @media (max-width: 900px) {
     .status li:last-child {
         display: none;
     }
 }
 
-@media (max-width: 525px) {
+@media (max-width: 650px) {
     .status li:nth-last-child(2) {
         display: none;
     }
@@ -459,7 +475,7 @@ a.terms-title {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 550px) {
     .status li:nth-last-child(3) {
         display: none;
     }
@@ -469,26 +485,15 @@ a.terms-title {
     }
 }
 
-@media (max-width: 360px) {
-    .menu>li:first-child {
-        float : none;
-        margin: 0 -0.08rem;
+@media (max-width: 450px) {
+    .footer .status, .footer .social {
+        float: none;
     }
-
     .sidebar {
         width: 40%;
     }
-}
-
-@media (max-width: 320px) {
-    .status li:nth-last-child(4) {
-        display: none;
-    }
-}
-
-@media (max-width: 290px) {
-    .footer .status {
-        float: left;
+    .status li:nth-last-child(2), .status li:nth-last-child(3){
+        display: list-item;
     }
 }
 
