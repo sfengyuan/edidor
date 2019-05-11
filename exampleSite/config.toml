@@ -22,6 +22,7 @@ disableFastRender = true
 # --------------------------------------------------------------------------
 
 disqusShortname = "your disqus short name"
+googleAnalytics = "your ga id"
 
 # social link in the footer, change it to "" hide it
 [social]
