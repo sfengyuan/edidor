@@ -28,9 +28,9 @@ And another list.
 2. Orange
 3. Peach
 
-### Third header
+### Third header image demo
 
-![Image](https://d33wubrfki0l68.cloudfront.net/30790d6888bd8af863fb2b5c33a7f337cdbda243/4e867/images/hugo-logo-wide.svg!)
+![Image](https://raw.githubusercontent.com/jacobsun/edidor/master/images/screenshot.png)
 
 #### Fourth header
 
