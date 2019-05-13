@@ -107,7 +107,7 @@ a:hover {
 .main {
     margin-left: 20vw;
     box-sizing : border-box;
-    padding    : 1rem 2rem;
+    padding    : 2vw 3vw;
     overflow-y : auto;
     position   : relative;
 }
@@ -144,7 +144,7 @@ a:hover {
     top       : 100%;
     left      : 0;
     background: #1A1D21;
-    width     : 15em;
+    width     : 14em;
     box-shadow: 0 0.1em 0.2em 0 #060608;
     z-index   : 9999;
 }
