@@ -5,6 +5,7 @@ A hugo theme that looks like an editor.
 
 Thanks for [@GoHugoIO](https://twitter.com/GoHugoIO)'s [promotion](https://twitter.com/GoHugoIO/status/1127175277673631744)
 
+** The theme code is fully rewrote, but the
 # Demo
 [Live](https://ziox.xyz/)
 
