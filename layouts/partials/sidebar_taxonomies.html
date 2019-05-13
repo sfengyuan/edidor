@@ -1,10 +1,10 @@
-<ul>
+<ul class="control">
     {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
     <li class="taxonomy-key">{{ $taxonomyname | humanize }}</li>
     {{ range $key, $value := $taxonomy }}
     {{ if $value.Count }}
     <li>
-        <a href="{{$taxonomyname | absURL}}/{{ $key }}">
+        <a href="{{$taxonomyname | absURL}}/{{ $key }}" class="btn">
             <i class="icon icon-{{$taxonomyname}}"></i>
             {{ $key }}
             <span class="count">{{ $value.Count }}</span>

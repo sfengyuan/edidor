@@ -1,28 +1,28 @@
 <footer class="footer clearfix">
-    <ul class="social left clearfix">
-        <li><a class="author" href="#">{{ .Site.Params.Author }}</a></li>
+    <ul class="control social clearfix">
+        <li><a class="author btn" href="#">{{ .Site.Params.Author }}</a></li>
         {{ range $key, $val := .Site.Social }}
         {{ if $val }}
         <li>
-            <a class="icon-link" href="{{ $val }}"><i class="{{ $key }}"></i></a>
+            <a class="icon-link btn" href="{{ $val }}"><i class="icon {{ $key }}"></i></a>
         </li>
         {{ end }}
         {{ end }}
         <li>
-            <a class="icon-link" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss">
-                <i class="rss"></i></a>
+            <a class="icon-link btn" href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss">
+                <i class="rss icon"></i></a>
         </li>
     </ul>
 
-    <ul class="status right clearfix">
-        <li><a href="#">Posts: {{ len (where (where .Site.Pages "Section" "posts") "Params.hidden" "!=" true) }}</a>
+    <ul class="control status clearfix">
+        <li><a href="#" class="btn">Posts: {{ len (where (where .Site.Pages "Section" "posts") "Params.hidden" "!=" true) }}</a>
         </li>
-        <li><a href="#">Pages: {{ len (where (where .Site.Pages "Section" "page") "Params.hidden" "!=" true) }}</a></li>
-        <li><a href="#">{{ .Site.Language.Lang }}</a></li>
-        <li><a href="https://gohugo.io">Hugo, {{ $.Hugo.Version }}</a></li>
-        <li><a href="https://github.com/jacobsun/edidor">Theme: Edidor</a></li>
+        <li><a href="#" class="btn">Pages: {{ len (where (where .Site.Pages "Section" "page") "Params.hidden" "!=" true) }}</a></li>
+        <li><a href="#" class="btn">{{ .Site.Language.Lang }}</a></li>
+        <li><a href="https://gohugo.io" class="btn">Hugo, {{ $.Hugo.Version }}</a></li>
+        <li><a href="https://github.com/jacobsun/edidor" class="btn">Theme: Edidor</a></li>
         <li>
-            <a href="#">Last build: <time
+            <a href="#" class="btn">Last build: <time
                     datetime="{{ dateFormat "2006-01-02T15:04:05Z0700" $.Hugo.BuildDate | safeHTML }}">{{ dateFormat "2006-01-02T15:04:05Z0700" $.Hugo.BuildDate  | safeHTML }}</time>
             </a>
         </li>

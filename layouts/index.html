@@ -2,14 +2,12 @@
 
 <body>
     {{ partial "header.html" . }}
-    <div class="middle">
-        <nav class="sidebar">
+    <div class="middle clearfix">
+        <aside class="sidebar">
             {{ partial "sidebar_posts.html" . }}
-        </nav>
+        </aside>
         <main class="main">
-            <div class="wrapper">
-                {{ partial "intro.html" . }}
-            </div>
+            {{ partial "intro.html" . }}
         </main>
     </div>
     {{ partial "footer.html" . }}

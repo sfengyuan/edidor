@@ -1,8 +1,8 @@
-<ul>
+<ul class="control tags">
     {{ range $key, $value := .Site.Taxonomies.tags}}
     {{ if $value.Count }}
     <li>
-        <a href="{{"tags" | absURL}}/{{ $key }}">
+        <a href="{{"tags" | absURL}}/{{ $key }}" class="btn">
             <i class="icon icon-tag"></i>
             {{ $key }}
             <span class="count">{{$value.Count}}</span>

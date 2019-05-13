@@ -1,12 +1,12 @@
 {{ $paginator := (.Paginate (.Pages.GroupByDate "2006-01")).PageGroups  }}
 {{ range $paginator }}
-<h2 class="group-date">
+<h2 class="title group-date">
     <time datetime="{{ .Key }}">{{ .Key }}</time>
 </h2>
-<ul class="list">
+<ul class="list control">
     {{ range .Pages }}
     <li class="item">
-        <h4 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+        <h4 class="title"><a href="{{ .Permalink }}" class="btn">{{ .Title }}</a></h4>
         <div class="item-meta">
             <time datetime="{{ .PublishDate.Format "01-02" }}">
                 {{ .PublishDate.Format "01-02" }}

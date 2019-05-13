@@ -1,36 +1,40 @@
 <article class="article">
-    <h2 class="title"><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
+    <h2 class="title"><a href='{{ .RelPermalink }}' class="btn">{{ .Title }}</a></h2>
     <div class="article-meta clearfix">
-        <ul class="dates clearfix left">
+        <ul class="dates clearfix left control">
             <li><i class="icon icon-date"></i></li>
             <li class="publish-date">
                 <time datetime="{{ .Date.Format "2006.01.02" }}">{{ .Date.Format "2006.01.02" }}</time>
             </li>
         </ul>
         {{ with .Params.categories }}
-        <ul class="article-categories clearfix left">
+        <ul class="article-categories clearfix left control">
             <li><i class="icon icon-categories"></i></li>
             {{ range . }}
             <li>
-                <a href="{{ "categories" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                <a href="{{ "categories" | absURL }}/{{ . | urlize }}/" class="btn">{{ . }}</a>
             </li>
             {{ end }}
         </ul>
         {{ end }}
         {{ with .Params.tags }}
-        <div class="clearfix"></div>
-        <ul class="article-tags clearfix">
+        <div class="article-meta-splitter clearfix"></div>
+        <ul class="article-tags clearfix control">
             <li><i class="icon icon-tags"></i></li>
             {{ range . }}
             <li>
-                <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                <a href="{{ "tags" | absURL }}/{{ . | urlize }}/" class="btn">{{ . }}</a>
             </li>
             {{ end }}
         </ul>
         {{ end }}
     </div>
     <div class="content">
+        {{ if .Content }}
         {{ .Content }}
+        {{ else }}
+        <p class="no-content">No Content. - -</p>
+        {{ end }}
     </div>
 
 </article>
