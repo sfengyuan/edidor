@@ -69,8 +69,8 @@ a:hover {
 .footer a {
     line-height  : 5vh;
     display      : block;
-    padding-left : 1vw;
-    padding-right: 1vw;
+    padding-left : 1.5vw;
+    padding-right: 1.5vw;
 }
 
 .header>ul,
@@ -144,8 +144,8 @@ a:hover {
     top       : 100%;
     left      : 0;
     background: #1A1D21;
-    width     : 24vw;
-    box-shadow: 0 0.1em 0.5em 0 #060608;
+    width     : 15em;
+    box-shadow: 0 0.1em 0.2em 0 #060608;
     z-index   : 9999;
 }
 
