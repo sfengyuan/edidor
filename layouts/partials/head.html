@@ -17,7 +17,14 @@
 
     <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}" />
     {{ if (.Site.Params.isHighlightCode) }}
-    <link rel="stylesheet" href="{{ "css/prism.css" | absURL }}" />
+    {{ if (eq .Site.Params.mode "light") }}
+    <link rel="stylesheet" href="{{ "css/prism_coy.css" | absURL }}" />
+
+    {{ else if (eq .Site.Params.mode "wild")}}
+    <link rel="stylesheet" href="{{ "css/prism_funky.css" | absURL }}" />
+    {{ else}}
+    <link rel="stylesheet" href="{{ "css/prism_tomorrow_night.css" | absURL }}" />
+    {{ end }}
     {{ end }}
     <link rel="stylesheet" href="{{ "css/edidor.css" | absURL }}" />
     <!-- custom css -->

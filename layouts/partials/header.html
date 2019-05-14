@@ -1,6 +1,28 @@
 <header class="header">
     <ul class="menu clearfix control">
-        <li><a href="{{ .Site.BaseURL }}" class="btn logo-link"><img class="logo" src="{{ "images/logo.svg" | absURL }}" alt=""></a></li>
+        <li>
+            <a href="{{ .Site.BaseURL }}" class="btn logo-link">
+                {{ if (eq .Site.Params.Mode "light") }}
+                    {{ if (fileExists "static/images/logo_light.svg") }}
+                    <img class="logo" src="{{ "images/logo_light.svg" | absURL }}" alt="logo"/>
+                    {{ else }}
+                    <img class="logo" src="{{ "images/logo.svg" | absURL }}" alt="logo"/>
+                    {{ end }}
+                {{ else if (eq .Site.Params.Mode "wild") }}
+                    {{ if (fileExists "static/images/logo_wild.svg") }}
+                    <img class="logo" src="{{ "images/logo_wild.svg" | absURL }}" alt="logo"/>
+                    {{ else }}
+                    <img class="logo" src="{{ "images/logo.svg" | absURL }}" alt="logo"/>
+                    {{ end }}
+                {{ else }}
+                    {{ if (fileExists "static/images/logo_dark.svg") }}
+                    <img class="logo" src="{{ "images/logo_dark.svg" | absURL }}" alt="logo"/>
+                    {{ else }}
+                    <img class="logo" src="{{ "images/logo.svg" | absURL }}" alt="logo"/>
+                    {{ end }}
+                {{ end }}
+            </a>
+        </li>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
         {{ if .HasChildren }}
@@ -10,8 +32,8 @@
             </a>
             <ul class="sub-menu control">
                 {{ range .Children }}
-                <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}{{ if eq .Name "Toggle Sidebar" }}toggle-sidebar{{ end }}">
-                    <a href="{{ .URL }}" class="btn">{{ .Name }}</a>
+                <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                    <a href="{{ .URL }}" class="btn {{ if eq .Name "Toggle Sidebar" }}sidebar-toggler{{ end }}{{ if eq .Name "Light" }}to-light-mode{{ end }}{{ if eq .Name "Dark" }}to-dark-mode{{ end }}{{ if eq .Name "Wild" }}to-wild-mode{{ end }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
             </ul>
