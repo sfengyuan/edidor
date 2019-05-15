@@ -16,17 +16,20 @@
     <title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
 
     <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}" />
-    {{ if (.Site.Params.isHighlightCode) }}
-    {{ if (eq .Site.Params.mode "light") }}
-    <link rel="stylesheet" href="{{ "css/prism_coy.css" | absURL }}" />
 
-    {{ else if (eq .Site.Params.mode "wild")}}
-    <link rel="stylesheet" href="{{ "css/prism_funky.css" | absURL }}" />
-    {{ else}}
-    <link rel="stylesheet" href="{{ "css/prism_tomorrow_night.css" | absURL }}" />
-    {{ end }}
-    {{ end }}
     <link rel="stylesheet" href="{{ "css/edidor.css" | absURL }}" />
+    {{ if (.Site.Params.isHighlightCode) }}
+        {{ if (eq .Site.Params.mode "light") }}
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-light.min.css">
+        {{ else if (eq .Site.Params.mode "wild")}}
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/gruvbox-light.min.css">
+        {{ else}}
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/nord.min.css">
+        {{ end }}
+    {{ end }}
     <!-- custom css -->
     {{ range .Site.Params.customCSS }}
     <link rel="stylesheet" href="{{ "css/" | absURL }}{{ . }}">

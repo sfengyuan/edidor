@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 html {
-    font-size: 14px;
+    font-size: calc(1vh + 1vw)
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 img {
     height   : auto;
     width    : 100%;
-    max-width: 480px;
+    max-width: 40vw;
 }
 
 .clearfix::after {
@@ -32,7 +32,8 @@ img {
 }
 
 .hide {
-    display: none;
+    height : 0;
+    opacity: 0;
 }
 
 .btn {
@@ -55,6 +56,58 @@ a:hover {
     text-decoration: none !important;
 }
 
+#cloak {
+    position  : absolute;
+    top       : 0;
+    left      : 0;
+    width     : 100vw;
+    height    : 100vh;
+    background: #FFF;
+    z-index   : 9999;
+    transition: opacity 0.3s ease-out, height 0.5s;
+}
+
+#cloak:before {
+    display      : block;
+    margin       : 50vh auto 0 auto;
+    content      : '';
+    width        : 2vmax;
+    height       : 2vmax;
+    background   : rgb(153, 204, 204);
+    border-radius: 2vmax;
+    animation    : bump 1s ease-in-out 0s infinite;
+}
+
+#cloak:after {
+    display   : block;
+    margin    : 0 auto;
+    content   : '';
+    width     : 4vmax;
+    height    : 1vmax;
+    background: #999999;
+    box-shadow: 0px 10px 13px #999999;
+}
+
+@keyframes bump {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, -10vh);
+    }
+
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+#cloak.hide {
+    height : 0;
+    width  : 100vw;
+    opacity: 0;
+}
+
 .header,
 .footer {
     height: 5vh;
@@ -64,8 +117,8 @@ a:hover {
 .footer a {
     line-height  : 5vh;
     display      : block;
-    padding-left : 1.5vw;
-    padding-right: 1.5vw;
+    padding-left : 1rem;
+    padding-right: 1rem;
 }
 
 .header>ul,
@@ -139,7 +192,7 @@ a:hover {
     top     : 100%;
     left    : 0;
     width   : 14em;
-    z-index : 9999;
+    z-index : 999;
 }
 
 .header li:hover>ul {
@@ -155,11 +208,6 @@ a:hover {
 
 .header .sub-menu a {
     padding: 0 2vw;
-}
-
-
-.footer a {
-    font-size: 0.8rem;
 }
 
 .sidebar {
@@ -187,7 +235,6 @@ a:hover {
     display    : block;
     line-height: 2;
     padding    : 0 2vw;
-    font-size  : 0.8rem;
 }
 
 .logo-link {
@@ -229,12 +276,12 @@ code {
 }
 
 .footer a {
-    padding: 0 0.7em;
+    padding: 0 0.5rem;
 }
 
 .footer .icon {
     position: relative;
-    top     : 0.1em;
+    top     : 0.2rem;
 }
 
 .sidebar .icon {
@@ -245,12 +292,16 @@ code {
 
 .article-meta .icon {
     position: relative;
-    top     : 0.1rem;
+    top     : calc(0.1rem + 2px);
 }
 
 .article-tags .icon {
     position: relative;
     top     : -0.2rem;
+}
+
+.article-categories li:first-child .icon {
+    top: calc(0.1rem + 1px);
 }
 
 .article {
@@ -288,8 +339,9 @@ code {
 }
 
 .article-meta li {
-    float       : left;
-    margin-right: 1rem;
+    float        : left;
+    margin-right : 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .article-meta li:first-child {
@@ -354,8 +406,10 @@ a.terms-title,
 }
 
 .header a,
-.footer a {
-    font-size: 1.8vh;
+.footer a,
+.sidebar a,
+.taxonomy-key {
+    font-size: 0.81rem;
 }
 
 /* == default dark color == */
@@ -431,7 +485,6 @@ hr {
     background: #1A1D21;
 }
 
-pre,
 code {
     background: #1A1C21;
 }
@@ -607,6 +660,49 @@ body.light-mode,
 }
 
 /* == light color end == */
+/* == wild mode text color == */
+.wild-mode .main .article-tags a,
+.wild-mode .local-info,
+.wild-mode .main,
+.wild-mode .terms-list a,
+.wild-mode blockquote.twitter-tweet,
+.wild-mode .sidebar a,
+.wild-mode .taxonomy-key,
+.wild-mode .main .title a,
+.wild-mode .header a,
+.wild-mode .footer a,
+.wild-mode .footer time,
+.wild-mode .pagination a,
+.wild-mode .header .sub-menu a {
+    color: #333333;
+}
+
+.wild-mode .icon,
+.wild-mode .footer .icon {
+    background: #333333;
+}
+
+.wild-mode .article-meta,
+.wild-mode .item-meta,
+.wild-mode .footnotes {
+    color: #666666;
+}
+
+.wild-mode .main h1,
+.wild-mode .main h2,
+.wild-mode .main h3,
+.wild-mode .main h4,
+.wild-mode .main h5,
+.wild-mode .main h6,
+.wild-mode .title {
+    text-shadow: none;
+}
+
+.wild-mode .local-info {
+    box-shadow: none;
+}
+
+/* == wild mode text color end == */
 @media only screen and (max-width: 800px) {
     .status li:last-child {
         display: none;

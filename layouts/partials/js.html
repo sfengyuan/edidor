@@ -1,7 +1,9 @@
-{{ if (.Site.Params.isHighlightCode) }}
-<script src="{{ "js/prism.js" | absURL }}"></script>
-{{ end }}
 <script src="{{ "js/throttle.js" | absURL }}"></script>
 <script src="{{ "js/edidor.js" | absURL }}"></script>
+
+{{ if (.Site.Params.isHighlightCode) }}
+<script src="{{ "js/highlight.pack.js" | absURL }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{{ end }}
 
 {{ template "_internal/google_analytics_async.html" . }}
