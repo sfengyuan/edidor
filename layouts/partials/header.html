@@ -33,14 +33,14 @@
             <ul class="sub-menu control">
                 {{ range .Children }}
                 <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                    <a href="{{ .URL }}" class="btn {{ if eq .Name "Toggle Sidebar" }}sidebar-toggler{{ end }}{{ if eq .Name "Light" }}to-light-mode{{ end }}{{ if eq .Name "Dark" }}to-dark-mode{{ end }}{{ if eq .Name "Wild" }}to-wild-mode{{ end }}">{{ .Name }}</a>
+                    <a href="{{ .URL | absURL }}" class="btn {{ if eq .Name "Toggle Sidebar" }}sidebar-toggler{{ end }}{{ if eq .Name "Light" }}to-light-mode{{ end }}{{ if eq .Name "Dark" }}to-dark-mode{{ end }}{{ if eq .Name "Wild" }}to-wild-mode{{ end }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
             </ul>
         </li>
         {{ else }}
         <li>
-            <a href="{{ .URL }}" class="btn">
+            <a href="{{ .URL | absURL }}" class="btn">
                 {{ .Name }}
             </a>
         </li>
