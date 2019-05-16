@@ -2,45 +2,38 @@
     <ul class="menu clearfix control">
         <li>
             <a href="{{ .Site.BaseURL }}" class="btn logo-link">
-                {{ if (eq .Site.Params.Mode "light") }}
-                    {{ if (fileExists "static/images/logo_light.svg") }}
-                    <img class="logo" src="{{ "images/logo_light.svg" | absURL }}" alt="logo"/>
-                    {{ else }}
-                    <img class="logo" src="{{ "images/logo.svg" | absURL }}" alt="logo"/>
-                    {{ end }}
-                {{ else if (eq .Site.Params.Mode "wild") }}
-                    {{ if (fileExists "static/images/logo_wild.svg") }}
-                    <img class="logo" src="{{ "images/logo_wild.svg" | absURL }}" alt="logo"/>
-                    {{ else }}
-                    <img class="logo" src="{{ "images/logo.svg" | absURL }}" alt="logo"/>
-                    {{ end }}
-                {{ else }}
-                    {{ if (fileExists "static/images/logo_dark.svg") }}
-                    <img class="logo" src="{{ "images/logo_dark.svg" | absURL }}" alt="logo"/>
-                    {{ else }}
-                    <img class="logo" src="{{ "images/logo.svg" | absURL }}" alt="logo"/>
-                    {{ end }}
-                {{ end }}
+                {{ partial "logo.html" . }}
             </a>
         </li>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
         {{ if .HasChildren }}
-        <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-            <a class="btn">
-                {{ .Name }}
+        {{ $name := .Name }}
+        <li {{if (eq $name "Theme")}} id="theme-switcher" {{end}}
+            class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+            <a class="btn" id="theme-switcher-button">
+                {{ $name }}
             </a>
             <ul class="sub-menu control">
                 {{ range .Children }}
                 <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                    <a href="{{ .URL }}" class="btn {{ if eq .Name "Toggle Sidebar" }}sidebar-toggler{{ end }}{{ if eq .Name "Light" }}to-light-mode{{ end }}{{ if eq .Name "Dark" }}to-dark-mode{{ end }}{{ if eq .Name "Wild" }}to-wild-mode{{ end }}">{{ .Name }}</a>
+                    <a href="{{ .URL }}"
+                    {{if (eq $name "Theme") }}
+                        {{if (eq .Identifier "export-wild") }}
+                        class="{{.Identifier}} btn"
+                        {{else}}
+                        data-theme="{{.Identifier}}" class="btn"
+                        {{end}}
+                    {{else}}
+                        class="btn {{ .Identifier }}"
+                    {{end}}>{{ .Name }}</a>
                 </li>
                 {{ end }}
             </ul>
         </li>
         {{ else }}
         <li>
-            <a href="{{ .URL | absURL }}" class="btn">
+            <a href="{{ .URL }}" class="btn">
                 {{ .Name }}
             </a>
         </li>

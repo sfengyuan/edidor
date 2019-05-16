@@ -4,10 +4,10 @@
 name = "edidor"
 license = "MIT"
 licenselink = "https://github.com/jacobsun/edidor/blob/master/LICENSE"
-description = "a hugo theme that looks like editors"
+description = "a hugo theme that looks like editors with infinite color modes"
 homepage = "https://github.com/jacobsun/edidor"
 tags = ["blog", "editor", "edidor"]
-features = ["personal"]
+features = ["personal", "color generator", "infinite color modes"]
 min_version = 0.40
 
 [author]

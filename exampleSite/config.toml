@@ -1,6 +1,6 @@
 theme = "edidor"
 title = "Edidor Demo"
-baseurl = "https://ziox.xyz"
+baseurl = "https://your site url"
 AuthorName = "Jon Doe"
 # place your logo file to ./static/images to set logo
 
@@ -34,53 +34,72 @@ googleAnalytics = "your ga id"
 
 # author, title, description are used in the home page, you can embed html tag in description
 [params]
-    # will use AuthorName if you leave it blank, but you can set it to arbitrary text to display
+    # will use AuthorName if you leave it blank, but you can set it to arbitrary text
     author = "Ziox"
     title = "ZIOX DEMO"
     description = "A hugo site using Edidor. <br/><br/> Ctrl+B toggle sidebar. "
     # change it to false if you don't need syntax highlighting, and save a little bandwidth
     isHighlightCode = true
 
-# menubar setting, feel free to customize it, can be deleted
+# menubar setting, you can change url, weight and name except the 'Theme'.
 [[menu.main]]
-    name = "File"
+    name = "Article"
     url = "#"
     weight = 1
-
-[[menu.main]]
-    name = "Edit"
-    url = "#"
-    weight = 2
-
-[[menu.main]]
-    name = "Selection"
-    url = "#"
-    weight = 3
-
 [[menu.main]]
     name = "View"
     url = "#"
-    weight = 4
-
+    weight = 10
+# You can change the name, but please don't edit the identifier
 [[menu.main]]
-    name = "Help"
+    parent = "View"
+    identifier = "toggle-sidebar"
+    name = "Toggle Sidebar"
     url = "#"
-    weight = 5
-
-# sub menu
+    weight = 10
 [[menu.main]]
-    parent = "File"
-    name = "open posts"
+    parent = "Article"
+    name = "Posts"
     url = "/posts"
     weight = 1
 [[menu.main]]
-    parent = "File"
-    name = "open categories"
-    url = "/categories"
-    weight = 10
-
-[[menu.main]]
-    parent = "File"
-    name = "open tags"
+    parent = "Article"
+    name = "Tags"
     url = "/tags"
     weight = 20
+[[menu.main]]
+    parent = "Article"
+    name = "Categories"
+    url = "/categories"
+    weight = 30
+
+# Please don't edit the identifier
+# I can't make the identifier works on top menu so please don't change the name of 'Theme' at the moment
+[[menu.main]]
+    name = "Theme"
+    url = "#"
+    weight = 25
+[[menu.main]]
+    parent = "Theme"
+    identifier = "light"
+    name = "Light"
+    url = "#"
+    weight = 1
+[[menu.main]]
+    parent = "Theme"
+    identifier = "dark"
+    name = "Dark"
+    url = "#"
+    weight = 10
+[[menu.main]]
+    parent = "Theme"
+    identifier = "wild"
+    name = "Wild"
+    url = "#"
+    weight = 20
+[[menu.main]]
+    parent = "Theme"
+    identifier = "export-wild"
+    name = "Export Wild Style"
+    url = "#"
+    weight = 25

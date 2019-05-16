@@ -1,5 +1,5 @@
 <div class="intro">
-    <img src="{{ "images/logo.svg" | absURL }}" alt="logo">
+    {{ partial "logo.html" .}}
     <h2>
         {{ with .Param "title" }}
         {{ . }}

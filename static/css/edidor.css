@@ -118,8 +118,8 @@ a:hover {
 .footer a {
     line-height  : 5vh;
     display      : block;
-    padding-left : 1rem;
-    padding-right: 1rem;
+    padding-left : 0.8rem;
+    padding-right: 0.8rem;
 }
 
 .header>ul,
@@ -183,8 +183,8 @@ a:hover {
     transform : translateY(-50%);
 }
 
-.intro img {
-    width: 40%;
+.intro img.logo {
+    display: inline;
 }
 
 .header ul ul {
@@ -274,10 +274,6 @@ code {
     width  : 1rem;
     height : 1rem;
     display: inline-block;
-}
-
-.footer a {
-    padding: 0 0.5rem;
 }
 
 .footer .icon {
@@ -423,7 +419,7 @@ a.terms-title,
     color     : #FFF;
 }
 
-.local-info {
+.local-info, .dialog label {
     background: #FFFF99;
     color     : #333;
     box-shadow: 2px 3px 1px 1px #000;
@@ -434,7 +430,8 @@ body,
 .main,
 .header .menu>li:hover,
 .footer a:hover,
-.logo-link {
+.logo-link,
+.dialog {
     background: #282C34;
 }
 
@@ -444,7 +441,8 @@ blockquote.twitter-tweet,
 .header .sub-menu a,
 .sidebar a,
 .taxonomy-key,
-.main .title a {
+.main .title a,
+.dialog .title {
     color: #C6C6C7;
 }
 
@@ -530,9 +528,66 @@ code {
     text-shadow: 0 1px 1px #000;
 }
 
+.dialog {
+    width: 100vw;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    font-size: 1rem;
+}
+.dialog .wrapper {
+    padding: 1rem;
+}
+.dialog header, .dialog main, .dialog footer {
+    margin-bottom: 2rem;
+}
+
+.dialog header {
+    margin-top: -2rem;
+}
+.dialog div {
+    margin-bottom: 1rem;
+}
+.dialog.show {
+    height: 100vh;
+}
+
+.dialog label {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    box-shadow: none;
+}
+.dialog input {
+    padding: 0.3rem;
+}
+.dialog input, .dialog button {
+    font-size: 1.2rem;
+    float: right;
+}
+
+.dialog button {
+    padding: 0.3rem 1rem;
+    background: #3083FE;
+    color: #FFF;
+}
+
+.dialog .close-dialog {
+    font-size: 3rem;
+    background: none;
+    border: none;
+}
+
+
 /* == default dark color end == */
 
 /* == light color == */
+.light-mode .dialog button {
+    color: #3083FE;
+}
 .light-mode .main a {
     color: #3083FE;
 }
@@ -559,7 +614,8 @@ body.light-mode,
 .light-mode blockquote.twitter-tweet,
 .light-mode .sidebar a,
 .light-mode .taxonomy-key,
-.light-mode .main .title a {
+.light-mode .main .title a,
+.light-mode .dialog .title {
     color: #4C4C4C;
 }
 
@@ -615,7 +671,9 @@ body.light-mode,
 .light-mode .footer,
 .light-mode .header .sub-menu li:hover,
 .light-mode .sidebar a:hover,
-.light-mode .logo-link {
+.light-mode .logo-link,
+.light-mode .dialog,
+.light-mode .dialog button {
     background: #DDDDDD;
 }
 
@@ -659,36 +717,8 @@ body.light-mode,
 .light-mode .title {
     text-shadow: none;
 }
-
 /* == light color end == */
-/* == wild mode text color == */
-.wild-mode .main .article-tags a,
-.wild-mode .local-info,
-.wild-mode .main,
-.wild-mode .terms-list a,
-.wild-mode blockquote.twitter-tweet,
-.wild-mode .sidebar a,
-.wild-mode .taxonomy-key,
-.wild-mode .main .title a,
-.wild-mode .header a,
-.wild-mode .footer a,
-.wild-mode .footer time,
-.wild-mode .pagination a,
-.wild-mode .header .sub-menu a {
-    color: #333333;
-}
-
-.wild-mode .icon,
-.wild-mode .footer .icon {
-    background: #333333;
-}
-
-.wild-mode .article-meta,
-.wild-mode .item-meta,
-.wild-mode .footnotes {
-    color: #666666;
-}
-
+/* == it's a disaster for random shadow == */
 .wild-mode .main h1,
 .wild-mode .main h2,
 .wild-mode .main h3,
@@ -698,12 +728,10 @@ body.light-mode,
 .wild-mode .title {
     text-shadow: none;
 }
-
 .wild-mode .local-info {
     box-shadow: none;
 }
-
-/* == wild mode text color end == */
+/* == wild mode end == */
 @media only screen and (max-width: 800px) {
     .status li:last-child {
         display: none;

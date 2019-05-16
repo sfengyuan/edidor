@@ -15,9 +15,11 @@
     </ul>
 
     <ul class="control status clearfix">
-        <li><a href="#" class="btn">Posts: {{ len (where (where .Site.Pages "Section" "posts") "Params.hidden" "!=" true) }}</a>
+        <li><a href="#" class="btn">Posts:
+                {{ len (where (where .Site.Pages "Section" "posts") "Params.hidden" "!=" true) }}</a>
         </li>
-        <li><a href="#" class="btn">Pages: {{ len (where (where .Site.Pages "Section" "page") "Params.hidden" "!=" true) }}</a></li>
+        <li><a href="#" class="btn">Pages:
+                {{ len (where (where .Site.Pages "Section" "page") "Params.hidden" "!=" true) }}</a></li>
         <li><a href="#" class="btn">{{ .Site.Language.Lang }}</a></li>
         <li><a href="https://gohugo.io" class="btn">Hugo, {{ $.Hugo.Version }}</a></li>
         <li><a href="https://github.com/jacobsun/edidor" class="btn">Theme: Edidor</a></li>
@@ -28,3 +30,26 @@
         </li>
     </ul>
 </footer>
+<div class="dialog">
+    <div class="wrapper">
+        <div class="clearfix"><button class="btn close-dialog">X</button></div>
+        <header>
+            <h1 class="title">Theme Name</h1>
+        </header>
+        <main>
+            <div class="clearfix">
+                <label for="theme-name">
+                    <p>Only English Character, space, hyphen are allowed!</p>
+                    <p>Valid name examples: "custom", "fantastic theme", "my-theme"</p>
+                    <p>Invalid name expamles: "我的主题", ":)", "123"</p>
+                </label>
+                <input type="text" name="theme-name" id="theme-name">
+            </div>
+            <div class="clearfix">
+                <button class="btn export">Export</button>
+            </div>
+
+        </main>
+        <footer></footer>
+    </div>
+</div>
