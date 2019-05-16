@@ -38,6 +38,7 @@ img {
 
 .btn {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .control {

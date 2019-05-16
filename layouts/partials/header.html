@@ -27,13 +27,13 @@
         {{ range .Site.Menus.main }}
         {{ if .HasChildren }}
         <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-            <a href="#" class="btn">
+            <a class="btn">
                 {{ .Name }}
             </a>
             <ul class="sub-menu control">
                 {{ range .Children }}
                 <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                    <a href="{{ .URL | absURL }}" class="btn {{ if eq .Name "Toggle Sidebar" }}sidebar-toggler{{ end }}{{ if eq .Name "Light" }}to-light-mode{{ end }}{{ if eq .Name "Dark" }}to-dark-mode{{ end }}{{ if eq .Name "Wild" }}to-wild-mode{{ end }}">{{ .Name }}</a>
+                    <a href="{{ .URL }}" class="btn {{ if eq .Name "Toggle Sidebar" }}sidebar-toggler{{ end }}{{ if eq .Name "Light" }}to-light-mode{{ end }}{{ if eq .Name "Dark" }}to-dark-mode{{ end }}{{ if eq .Name "Wild" }}to-wild-mode{{ end }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
             </ul>
