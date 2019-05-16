@@ -97,7 +97,10 @@ You can find the code that you need in this file.
 # Other
 This is a new theme, if you found any problems, feel free to open an issue, and contribution is welcome! 😊
 
+# FAQ
 
+### What happened to the logo?
+The appropriate logo will be loaded by server end, when you change theme locally the logo won't be loaded again, this may be fixed in the future.
 
 # License
 MIT
