@@ -22,7 +22,8 @@ Still wild mode.
 # Wild Mode Demo
 I don't need to post more images, you can generate it by your self. Just head to [my site](https://ziox.xyz/). Keep clicking 'Theme > Wild mode'
 
-** No guarantee for what colors you can get** 🙃
+**No guarantee for what colors you can get** 🙃
+
 # Features
 
 - viewport unit, test from 1920 x 1080 desktop to 320 x 568 mobile
@@ -74,6 +75,7 @@ Do not change these fields:
 Beyond those, you can customize it as you like.
 
 *Why the field 'Theme' in menu doesn't use identifier, but name?*
+
 I tried, but when I add an identifier to the top menu, some weired things happend, this is just a temporary workaroud.
 
 ## Wild mode
