@@ -95,7 +95,7 @@ In your config file: add
 ```
 Place the `custom.css` to your site root/static/css directory.
 
-##Add wild mode CSS##
+## Add wild mode CSS
 
 Click `Export Wild mode`, and enter a theme name, a css file will be downloaded.
 You can find the code that you need in this file, and following the above steps.
@@ -109,7 +109,7 @@ In your config file: add
 ```
 Place the `custom.js` to your site root/static/js directory.
 
-##Custom syntax highlighting**
+## Custom syntax highlighting
 
 The theme use [hightlight.js](https://highlightjs.org/) library, if you want to use custom hightlight.js, add it as custom js, and add this to your config.
 ```

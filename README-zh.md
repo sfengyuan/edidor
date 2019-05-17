@@ -87,7 +87,7 @@ Logo文件必须是 `svg` 格式, 以后会修改, 复制到 根目录/static/im
 ```
 把 `custom.css` 放到 根目录/static/css 目录里.
 
-##使用狂野样式##
+## 使用狂野样式
 点击 `Export Wild mode`, 输入主题名字, 你会下载一份css文件. 用记事本打开会看到需要的代码.
 类似这个样子:
 ```
@@ -121,7 +121,7 @@ Logo文件必须是 `svg` 格式, 以后会修改, 复制到 根目录/static/im
 ```
 把`custom.js` 放到 根目录/static/js 中.
 
-##自定义语法高亮**
+## 自定义语法高亮
 
 主题使用 [hightlight.js](https://highlightjs.org/), 如果你想添加自己的高亮文件,首先添加自定义JS文件, 然后在配置文件里添加:
 
