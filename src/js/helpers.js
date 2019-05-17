@@ -1,13 +1,13 @@
-/* eslint-disable no-unused-vars */
 // dom helper functions
-function qs (sel, parent = document.body) {
+const throttle = require('lodash.throttle')
+export function qs (sel, parent = document.body) {
   if (typeof parent === 'string') {
     parent = document.querySelector(parent)
   }
   return parent.querySelector(sel)
 }
 
-function elt (name, attr = {}, ...text) {
+export function elt (name, attr = {}, ...text) {
   const node = document.createElement(name)
   Object.keys(attr).forEach(k => {
     node.setAttribute(k, attr[k])
@@ -21,41 +21,41 @@ function elt (name, attr = {}, ...text) {
   return node
 }
 
-function removeClass (dom, cls) {
+export function removeClass (dom, cls) {
   if (typeof dom === 'string') {
     dom = qs(dom)
   }
   dom.classList.remove(cls)
   return dom
 }
-function clearClass (dom, cls) {
+export function clearClass (dom, cls) {
   if (typeof dom === 'string') {
     dom = qs(dom)
   }
   dom.className = ''
   return dom
 }
-function addClass (dom, cls) {
+export function addClass (dom, cls) {
   if (typeof dom === 'string') {
     dom = qs(dom)
   }
   dom.classList.add(cls)
   return dom
 }
-// function toggleClass (dom, cls) { // eslint-disable-line
-//   if (typeof dom === 'string') {
-//     dom = qs(dom)
-//   }
-//   dom.classList.toggle(cls)
-//   return dom
-// }
-function hasClass (dom, cls) {
+export function toggleClass (dom, cls) {
+  if (typeof dom === 'string') {
+    dom = qs(dom)
+  }
+  dom.classList.toggle(cls)
+  return dom
+}
+export function hasClass (dom, cls) {
   if (typeof dom === 'string') {
     dom = qs(dom)
   }
   return dom.classList.contains(cls)
 }
-function setStyle (dom, styles) {
+export function setStyle (dom, styles) {
   if (typeof dom === 'string') {
     dom = qs(dom)
   }
@@ -64,18 +64,18 @@ function setStyle (dom, styles) {
     dom.style[key] = styles[key]
   })
 }
-function onEvent (event, cb, limit = 0, dom = document.body) {
+export function onEvent (event, cb, limit = 0, dom = document.body) {
   if (typeof dom === 'string') {
     dom = qs(dom)
   }
   if (limit > 0) {
-    dom.addEventListener(event, throttle(cb, limit)) // eslint-disable-line
+    dom.addEventListener(event, throttle(cb, limit))
   } else {
     dom.addEventListener(event, cb)
   }
 }
 // mousemove and touchmove abstraction
-function onPointerMove (cb, limit, dom = document.body) {
+export function onPointerMove (cb, limit, dom = document.body) {
   onEvent('mousemove', e => {
     cb({ // eslint-disable-line
       clientX: e.clientX,
@@ -93,7 +93,7 @@ function onPointerMove (cb, limit, dom = document.body) {
   }, limit, dom)
 }
 // local storage
-const ls = {}
+export const ls = {}
 ls.get = key => window.localStorage.getItem(key)
 
 ls.set = (key, value) => {
@@ -104,8 +104,21 @@ ls.set = (key, value) => {
   }
   window.localStorage.setItem(key, value)
 }
-function randomInt (min, max) {
+export function randomInt (min, max) {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min)) + min
+}
+
+export function download (filename, text) {
+  const a = elt('a', {
+    href: 'data:text/plain;charset=utf-8,' + encodeURIComponent(text),
+    download: filename,
+    style: {
+      display: 'none'
+    }
+  })
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
 }

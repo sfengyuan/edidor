@@ -1,4 +1,5 @@
-/* eslint-disable no-undef, no-unused-vars */
+import { randomInt } from './helpers'
+
 // tagged template function, produce wild styles
 function styleTemplate (strings, ...keys) {
   return function () {
@@ -129,3 +130,5 @@ const wildStyle = styleTemplate`
       background: ${'deepGray'};
   }
   `
+
+export default wildStyle

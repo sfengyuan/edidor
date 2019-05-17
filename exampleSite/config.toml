@@ -40,7 +40,11 @@ googleAnalytics = "your ga id"
     description = "A hugo site using Edidor. <br/><br/> Ctrl+B toggle sidebar. "
     # change it to false if you don't need syntax highlighting, and save a little bandwidth
     isHighlightCode = true
-
+    # set true need to use custom js
+    useCustomSyntaxHighlight = false
+    customJs = [""]
+    customCss = [""]
+    mode = "light"
 # menubar setting, you can change url, weight and name except the 'Theme'.
 [[menu.main]]
     name = "Article"

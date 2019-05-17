@@ -1,10 +1,11 @@
-<script src="{{ "js/throttle.js" | absURL }}"></script>
-<script src="{{ "js/helpers.js" | absURL }}"></script>
-<script src="{{ "js/wild_template.js" | absURL }}"></script>
-<script src="{{ "js/edidor.js" | absURL }}"></script>
-
+<script src="{{ "js/main.js" | absURL }}"></script>
+{{ range .Site.Params.customJs}}
+    <script src="{{ "js/" | absURL }}{{ . }}"></script>
+{{ end }}
 {{ if (.Site.Params.isHighlightCode) }}
-<script src="{{ "js/highlight.pack.js" | absURL }}"></script>
+{{ if not .Site.Params.useCustomSyntaxHighlight}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+{{ end }}
 <script>hljs.initHighlightingOnLoad();</script>
 {{ end }}
 

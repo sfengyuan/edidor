@@ -1,0 +1,36 @@
+{
+    "name": "edidor",
+    "version": "1.0.0",
+    "description": "[中文](https://github.com/jacobsun/edidor/blob/master/README-zh.md)",
+    "main": "index.js",
+    "dependencies": {
+        "lodash.throttle": "^4.1.1"
+    },
+    "devDependencies": {
+        "css-loader": "^2.1.1",
+        "file-loader": "^3.0.1",
+        "mini-css-extract-plugin": "^0.6.0",
+        "node-sass": "^4.12.0",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "postcss-loader": "^3.0.0",
+        "postcss-preset-env": "^6.6.0",
+        "rimraf": "^2.6.3",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1",
+        "terser-webpack-plugin": "^1.2.4",
+        "url-loader": "^1.1.2",
+        "webpack": "^4.31.0",
+        "webpack-cli": "^3.3.2",
+        "webpack-dev-server": "^3.3.1"
+    },
+    "scripts": {
+        "start": "NODE_ENV=development webpack --watch",
+        "build": "rimraf static/images/* && NODE_ENV=production webpack --config webpack.config.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "browserslist": [
+        "last 2 version",
+        "> 2%"
+    ]
+}

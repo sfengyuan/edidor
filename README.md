@@ -57,16 +57,16 @@ Copy `config.toml` in `exampleSite` to your site root folder, you are good to go
 
 ## Logo
 
-Logo images should be `svg` file, they are in the root/static/images/ directory. You can have three versions.
+Logo images should be `svg` file, they are in the root/static/images/ directory. You need to have three versions. Just copy and rename theme, if you don't want to use separate design.
 
-- logo.svg
+- logo.svg(default in dark mode!)
 - logo_light.svg
-- logo_dark.svg
+- logo_wild.svg
 
-The theme will load the appropriate file automatically.
+The theme will display the appropriate logo automatically.
 
 ## Menu
-Some menu entries are important to the theme, if you change it, some functions will be broke.
+Some menu entries are important to the theme, if you change it, some functions will stop to work.
 
 Do not change these fields:
 - the name of 'Theme'
@@ -88,19 +88,42 @@ If you want to publish the local styles to your server end. You have to use cust
 
 ## Custom CSS
 
+In your config file: add
+```
+[params]
+    customCss = ["custom.css", ...]
+```
+Place the `custom.css` to your site root/static/css directory.
+
+##Add wild mode CSS##
+
 Click `Export Wild mode`, and enter a theme name, a css file will be downloaded.
-You can find the code that you need in this file.
+You can find the code that you need in this file, and following the above steps.
+
+## Custom JS
+
+In your config file: add
+```
+[params]
+    customJs = ["custom.js", ...]
+```
+Place the `custom.js` to your site root/static/js directory.
+
+##Custom syntax highlighting**
+
+The theme use [hightlight.js](https://highlightjs.org/) library, if you want to use custom hightlight.js, add it as custom js, and add this to your config.
+```
+useCustomSyntaxHighlight = true
+```
+You don't need to run the code manually.
 
 # Todo
-- Use build tools, minify source code
 
 # Other
 This is a new theme, if you found any problems, feel free to open an issue, and contribution is welcome! 😊
 
 # FAQ
 
-### What happened to the logo?
-The appropriate logo will be loaded by server end, when you change theme locally the logo won't be loaded again, this may be fixed in the future.
 
 # License
 MIT

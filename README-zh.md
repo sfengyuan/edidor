@@ -80,6 +80,14 @@ Logo文件必须是 `svg` 格式, 以后会修改, 复制到 根目录/static/im
 
 ## 自定义css
 
+在配置文件中, 添加
+```
+[params]
+    customCss = ["custom.css", ...]
+```
+把 `custom.css` 放到 根目录/static/css 目录里.
+
+##使用狂野样式##
 点击 `Export Wild mode`, 输入主题名字, 你会下载一份css文件. 用记事本打开会看到需要的代码.
 类似这个样子:
 ```
@@ -104,16 +112,30 @@ Logo文件必须是 `svg` 格式, 以后会修改, 复制到 根目录/static/im
 
 你需要把这份文件复制到根目录/static/css 中, 文件名可修改, 然后复制中间的菜单的代码, 就是--(连字符)之间的, 你可以修改`name(菜单显示的文本`和`weight(菜单顺序)`, 但是`identifier(程序需要用)`不能改.
 
+## 自定义JS
+
+在配置文件中添加
+```
+[params]
+    customJs = ["custom.js", ...]
+```
+把`custom.js` 放到 根目录/static/js 中.
+
+##自定义语法高亮**
+
+主题使用 [hightlight.js](https://highlightjs.org/), 如果你想添加自己的高亮文件,首先添加自定义JS文件, 然后在配置文件里添加:
+
+```
+useCustomSyntaxHighlight = true
+```
+你不用手动执行代码.
+
 # Todo
-使用项目构建工具, 压缩js
 
 # 其他
 这是一个新主题, 如果你发现任何bug, 请发issue, 欢迎贡献代码! 😊
 
 # FAQ
-
-### Logo 怎么回事?
-正确的logo会在服务器端载入, 当你在本地改变主题时, logo不会更新, 将来可能会修改.
 
 # License
 MIT
