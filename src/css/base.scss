@@ -56,59 +56,63 @@ img {
 a:hover {
     text-decoration: none !important;
 }
-
-#cloak {
-    position  : absolute;
-    top       : 0;
-    left      : 0;
-    width     : 100vw;
-    height    : 100vh;
-    background: #FFF;
-    z-index   : 9999;
-    transition: opacity 0.3s ease-out, height 0.5s;
-}
-
-#cloak:before {
-    display      : block;
-    margin       : 50vh auto 0 auto;
-    content      : '';
-    width        : 2vmax;
-    height       : 2vmax;
-    background   : rgb(153, 204, 204);
-    border-radius: 2vmax;
-    animation    : bump 1s ease-in-out 0s infinite;
-}
-
-#cloak:after {
-    display   : block;
-    margin    : 0 auto;
-    content   : '';
-    width     : 4vmax;
-    height    : 1vmax;
-    background: #999999;
-    box-shadow: 0px 10px 13px #999999;
-}
-
-@keyframes bump {
-    0% {
-        transform: translate(0, 0px);
+body {
+    overflow: auto;
+    .loader {
+        display: none;
     }
-
-    50% {
-        transform: translate(0, -10vh);
-    }
-
-    100% {
-        transform: translate(0, 0px);
+}
+body.loading {
+    overflow: hidden;
+    .loader {
+        display: block;
     }
 }
 
-#cloak.hide {
-    height : 0;
-    width  : 100vw;
-    opacity: 0;
+body.loaded {
+    .loader {
+        background:transparent;
+    }
 }
 
+.loader {
+    background: $dark_main_bg;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    img.logo {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+    .top, .bottom {
+        position: absolute;
+        width: 100vw;
+        height: 50vh;
+        z-index: 99999;
+        overflow: hidden;
+    }
+    .top {
+        background: rgb(102, 204, 255);
+        top: -50vh;
+        img.logo {
+            bottom: -100%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .bottom {
+        background: rgb(190, 251, 191);
+        top: 100vh;
+        img.logo {
+            transform: translateY(-50%);
+        }
+
+    }
+}
 .header,
 .footer {
     height: 5vh;

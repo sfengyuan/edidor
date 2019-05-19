@@ -4,6 +4,7 @@
     "description": "[中文](https://github.com/jacobsun/edidor/blob/master/README-zh.md)",
     "main": "index.js",
     "dependencies": {
+        "d3-ease": "^1.0.5",
         "lodash.throttle": "^4.1.1"
     },
     "devDependencies": {

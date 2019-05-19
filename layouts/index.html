@@ -1,7 +1,7 @@
 {{ partial "head.html" . }}
 
-<body class="{{ .Site.Params.Mode }}-mode">
-    <div id="cloak"></div>
+<body class="loading {{ .Site.Params.Mode }}-mode">
+    {{ partial "loader.html" .}}
     {{ partial "header.html" . }}
     <div class="middle clearfix">
         <aside class="sidebar">

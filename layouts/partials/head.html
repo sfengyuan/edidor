@@ -8,7 +8,7 @@
     {{ $.Hugo.Generator }}
     <!-- Permalink & RSSlink -->
     <link rel="canonical" href="{{ .Permalink }}" />
-
+    <meta name="description" content="{{ .Site.Params.Description }}">
     {{ range .AlternativeOutputFormats }}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
     {{ end }}

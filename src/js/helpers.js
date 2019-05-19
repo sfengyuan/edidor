@@ -64,14 +64,14 @@ export function setStyle (dom, styles) {
     dom.style[key] = styles[key]
   })
 }
-export function onEvent (event, cb, limit = 0, dom = document.body) {
+export function onEvent (event, cb, limit = 0, dom = document.body, options = {}) {
   if (typeof dom === 'string') {
     dom = qs(dom)
   }
   if (limit > 0) {
-    dom.addEventListener(event, throttle(cb, limit))
+    dom.addEventListener(event, throttle(cb, limit), options)
   } else {
-    dom.addEventListener(event, cb)
+    dom.addEventListener(event, cb, options)
   }
 }
 // mousemove and touchmove abstraction
@@ -82,7 +82,7 @@ export function onPointerMove (cb, limit, dom = document.body) {
       clientY: e.clientY,
       type: e.type
     })
-  }, limit, dom)
+  }, limit, dom, { passive: true })
 
   onEvent('touchmove', e => {
     cb({ // eslint-disable-line
@@ -90,7 +90,7 @@ export function onPointerMove (cb, limit, dom = document.body) {
       clientY: e.touches[0].clientY,
       type: e.type
     })
-  }, limit, dom)
+  }, limit, dom, { passive: true })
 }
 // local storage
 export const ls = {}
@@ -121,4 +121,19 @@ export function download (filename, text) {
   document.body.appendChild(a)
   a.click()
   document.body.removeChild(a)
+}
+
+export function trackTime (id) {
+  const [entry] = window.performance.getEntriesByName(id)
+  if (!entry) {
+    window.performance.mark(id)
+    return 0
+  }
+  return window.performance.now() - entry.startTime
+}
+export function getProgress (data) {
+  if (data.duration) {
+    return Math.min(trackTime(data.id) / data.duration, 1)
+  }
+  return 1
 }
