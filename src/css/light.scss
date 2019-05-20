@@ -64,7 +64,7 @@ body.light-mode,
 
 .light-mode pre,
 .light-mode code {
-    background: #DDDDDD;
+    background: $light_header_bg;
 }
 
 /* sidebar fg */
@@ -87,7 +87,7 @@ body.light-mode,
 .light-mode .logo-link,
 .light-mode .dialog,
 .light-mode .dialog button {
-    background: #DDDDDD;
+    background: $light_header_bg;
 }
 
 .light-mode .header .menu>li:hover,
@@ -129,4 +129,10 @@ body.light-mode,
 .light-mode .main h6,
 .light-mode .title {
     text-shadow: none;
+}
+
+.light-mode {
+    .top, .bottom {
+        background: $light_header_bg;
+    }
 }

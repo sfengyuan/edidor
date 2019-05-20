@@ -9,4 +9,6 @@
 <script>hljs.initHighlightingOnLoad();</script>
 {{ end }}
 
+{{- if not .Site.IsServer -}}
 {{ template "_internal/google_analytics_async.html" . }}
+{{- end -}}

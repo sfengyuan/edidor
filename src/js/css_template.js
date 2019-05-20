@@ -88,7 +88,8 @@ const wildStyle = styleTemplate`
   .wild-mode .footer,
   .wild-mode .header .sub-menu li:hover,
   .wild-mode .sidebar a:hover,
-  .wild-mode .logo-link {
+  .wild-mode .logo-link,
+  .wild-mode .top, .wild-mode .bottom {
       background: ${'dark'};
   }
   .wild-mode .header .menu>li:hover,

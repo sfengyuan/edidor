@@ -9,12 +9,11 @@ import {
   onEvent,
   onPointerMove,
   ls,
-  download,
-  getProgress
+  download
 } from './helpers'
 import wildStyle from './css_template'
 import { genFile } from './file_template'
-import { easeBounceOut, easeBounceIn } from 'd3-ease'
+
 // sidebar function dragging wrapper
 function activateSidebarDrag (doms) {
   const state = {
@@ -127,7 +126,7 @@ function tryLoadMode (doms, loader) {
       ls.get('wild_style'))
     document.body.appendChild(wildEle)
   }
-  loader.open()
+  loader.loaded()
 }
 function activateModeSwitcher (doms, loader) {
   onEvent('click', e => {
@@ -146,6 +145,7 @@ function activateModeSwitcher (doms, loader) {
       console.error('Theme name not found, probably missing an "Identifier" field in Config file.')
       return
     }
+    loader.loading()
     toMode(theme + '-mode')
     if (theme === 'wild') {
       const wildEle = qs('.wild-ele')
@@ -157,6 +157,7 @@ function activateModeSwitcher (doms, loader) {
       }
       ls.set('wild_style', style)
     }
+    loader.loaded()
   }, 0, '#theme-switcher')
 }
 
@@ -164,7 +165,7 @@ function activateModeSwitcher (doms, loader) {
 //   removeClass(cloak, 'hide')
 // }
 
-function activateDialog (doms) {
+function activateDialog (doms, loader) {
   onEvent('click', e => {
     removeClass('.dialog', 'show')
   }, 0, '.close-dialog')
@@ -182,8 +183,10 @@ function activateDialog (doms) {
       window.alert('Mess up builtin themes.')
       return
     }
+    loader.loading()
     exportWild(themeName)
     removeClass('.dialog', 'show')
+    loader.loaded()
   }, 0, '.export')
 }
 function exportWild (themeName) {
@@ -199,74 +202,11 @@ function generateFile (themeName) {
   return file + style
 }
 
-function getLoader () {
-  let topEle = qs('.top')
-  let bottomEle = qs('.bottom')
-  // let distance = document.documentElement.clientHeight / 2
-  let distance = 312.5
-  console.log('distance', distance)
-  let isLoaded = false
-  let isLoadingDone = false
-
-  const animation = (ease, cb, duration, finaly = () => {}) => {
-    const tick = () => {
-      const progress = Math.min(ease((getProgress(data))), 1)
-      if (progress < 1) {
-        cb(progress)
-        window.requestAnimationFrame(tick)
-      } else {
-        window.performance.clearMarks(data.id)
-        cb(progress)
-        finaly()
-      }
-    }
-    const data = {
-      duration,
-      id: window.requestAnimationFrame(tick)
-    }
-  }
-  function close (cb) {
-    console.log('close')
-    removeClass(document.body, 'loaded')
-    addClass(document.body, 'loading')
-    animation(easeBounceIn, progress => {
-      topEle.style.top = -((1 - progress) * distance) + 'px'
-      bottomEle.style.top = (1 - progress) * distance + distance + 'px'
-    }, 1000, () => {
-      isLoadingDone = true
-      if (isLoaded) open()
-    })
-  }
-
-  function open (cb) {
-    isLoaded = true
-    if (isLoadingDone) {
-      console.log('open')
-      addClass(document.body, 'loaded')
-      animation(easeBounceOut, progress => {
-        topEle.style.top = -(progress * distance) + 'px'
-        bottomEle.style.top = progress * distance + distance + 'px'
-      }, 1000, afterOpen)
-    }
-  }
-
-  const afterOpen = () => {
-    removeClass(document.body, 'loading')
-    isLoadingDone = false
-    isLoaded = false
-  }
-  return {
-    close,
-    open
-  }
-}
-
 export {
   tryLoadMode,
   tryRestoreSidebar,
   activateSidebarToggle,
   activateModeSwitcher,
   activateSidebarDrag,
-  activateDialog,
-  getLoader
+  activateDialog
 }

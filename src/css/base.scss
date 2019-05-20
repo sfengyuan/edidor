@@ -9,6 +9,7 @@ body {
     word-break : break-all;
     box-sizing : border-box;
     font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+    overflow: hidden;
 }
 
 img {
@@ -56,63 +57,47 @@ img {
 a:hover {
     text-decoration: none !important;
 }
-body {
-    overflow: auto;
-    .loader {
+
+body.loaded {
+    .top {
+        display: none;
+    }
+    .bottom {
         display: none;
     }
 }
-body.loading {
-    overflow: hidden;
-    .loader {
-        display: block;
-    }
-}
 
-body.loaded {
-    .loader {
-        background:transparent;
-    }
-}
 
-.loader {
-    background: $dark_main_bg;
-    width: 100vw;
-    height: 100vh;
+.top img.logo, .bottom img.logo {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+.top, .bottom {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 999999;
+    width: 100vw;
+    height: 50vh;
+    z-index: 99999;
+    overflow: hidden;
+}
+.top {
+    background: $dark_main_bg;
+    top: -50vh;
     img.logo {
-        display: block;
-        margin: 0 auto;
-        position: relative;
-    }
-    .top, .bottom {
-        position: absolute;
-        width: 100vw;
-        height: 50vh;
-        z-index: 99999;
-        overflow: hidden;
-    }
-    .top {
-        background: rgb(102, 204, 255);
-        top: -50vh;
-        img.logo {
-            bottom: -100%;
-            transform: translateY(-50%);
-        }
-    }
-
-    .bottom {
-        background: rgb(190, 251, 191);
-        top: 100vh;
-        img.logo {
-            transform: translateY(-50%);
-        }
-
+        bottom: -100%;
+        transform: translateY(-50%);
     }
 }
+
+.bottom {
+    background: $dark_main_bg;
+    top: 100vh;
+    img.logo {
+        transform: translateY(-50%);
+    }
+
+}
+
 .header,
 .footer {
     height: 5vh;

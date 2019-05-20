@@ -6,13 +6,13 @@ import {
   activateSidebarToggle,
   activateModeSwitcher,
   activateSidebarDrag,
-  activateDialog,
-  getLoader
+  activateDialog
 } from './js/main'
+import { getLoader } from './js/loader'
 const loader = getLoader()
 onEvent('DOMContentLoaded', e => {
   console.log('page loaded!', Date.now())
-  loader.close()
+  loader.loading()
   const doms = {}
   doms.pane = qs('.sidebar')
   doms.main = qs('.main')
@@ -23,5 +23,5 @@ onEvent('DOMContentLoaded', e => {
   activateSidebarToggle(doms)
   activateModeSwitcher(doms, loader)
   activateSidebarDrag(doms)
-  activateDialog(doms)
+  activateDialog(doms, loader)
 }, 0, document)
