@@ -27,7 +27,7 @@ I don't need to post more images, you can generate it by your self. Just head to
 # Features
 
 - viewport unit, test from 1920 x 1080 desktop to 320 x 568 mobile
-- No frameworks, only a Lodash throttle function for performance
+- No frameworks, only a Lodash `throttle` and an easing function from d3.ease
 - All static icons are inline svgs, coloring available due to mask-image
 - syntax hightlighting by highlight.js, can be turn off
 - Disqus comment system

@@ -25,7 +25,7 @@
 # 特色
 
 - 视口单位, 测试了从 1920 x 1080 到 to 320 x 568 的分辨率
-- 无框架, 为了性能使用了单独的lodash throttle函数
+- 无框架, 只有一个lodash的throttle函数, 和d3.ease 的一个easing 函数
 - 所有图标都是mask-image svg, 可以随意改变颜色
 - highlight.js 提供语法高亮, 可关闭从而不加载文件
 - Disqus 评论
