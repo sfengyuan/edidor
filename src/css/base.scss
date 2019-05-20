@@ -82,7 +82,7 @@ body.loaded {
 }
 .top {
     background: $dark_main_bg;
-    top: -50vh;
+    top: calc(-50vh - 100px);
     img.logo {
         bottom: -100%;
         transform: translateY(-50%);
@@ -91,7 +91,7 @@ body.loaded {
 
 .bottom {
     background: $dark_main_bg;
-    top: 100vh;
+    top: calc(100vh + 100px);
     img.logo {
         transform: translateY(-50%);
     }

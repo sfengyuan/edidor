@@ -3,7 +3,8 @@ import { easeElasticOut } from 'd3-ease'
 export function getLoader () {
   let topEle = qs('.top')
   let bottomEle = qs('.bottom')
-  let distance = document.documentElement.clientHeight / 2
+  let halfScreen = document.documentElement.clientHeight / 2
+  let distance = halfScreen + 100
   let ticket = false
   let closed = false
   let opening = false
@@ -50,14 +51,14 @@ export function getLoader () {
   function close (cb) {
     animation(easeElasticOut, progress => {
       topEle.style.top = -((1 - progress) * distance) + 'px'
-      bottomEle.style.top = (1 - progress) * distance + distance + 'px'
+      bottomEle.style.top = (1 - progress) * distance + halfScreen + 'px'
     }, 1000, cb)
   }
 
   function open (cb) {
     animation(easeElasticOut, progress => {
       topEle.style.top = -(progress * distance) + 'px'
-      bottomEle.style.top = progress * distance + distance + 'px'
+      bottomEle.style.top = progress * distance + halfScreen + 'px'
     }, 1000, () => {
       opening = false
       closed = false
