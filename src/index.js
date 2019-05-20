@@ -11,12 +11,10 @@ import {
 import { getLoader } from './js/loader'
 const loader = getLoader()
 onEvent('DOMContentLoaded', e => {
-  console.log('page loaded!', Date.now())
   loader.loading()
   const doms = {}
   doms.pane = qs('.sidebar')
   doms.main = qs('.main')
-  doms.cloak = qs('#cloak')
   doms.paneLeft = doms.pane.getBoundingClientRect().left
   tryLoadMode(doms, loader)
   tryRestoreSidebar(doms)

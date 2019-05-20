@@ -28,7 +28,6 @@ export function getLoader () {
     }
   }
   const loading = () => {
-    console.log('loading', ticket)
     if (ticket) return
     ticket = true
     close(() => {
@@ -39,7 +38,6 @@ export function getLoader () {
     })
   }
   const loaded = () => {
-    console.log('loaded: ', ticket, opening)
     if (!ticket) return
     if (opening) return
     opening = true
