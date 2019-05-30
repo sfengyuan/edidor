@@ -21,11 +21,11 @@
         <li><a href="#" class="btn">Pages:
                 {{ len (where (where .Site.Pages "Section" "page") "Params.hidden" "!=" true) }}</a></li>
         <li><a href="#" class="btn">{{ .Site.Language.Lang }}</a></li>
-        <li><a href="https://gohugo.io" class="btn">Hugo, {{ $.Hugo.Version }}</a></li>
+        <li><a href="https://gohugo.io" class="btn">Hugo, {{ hugo.Version }}</a></li>
         <li><a href="https://github.com/jacobsun/edidor" class="btn">Theme: Edidor</a></li>
         <li>
             <a href="#" class="btn">Last build: <time
-                    datetime="{{ dateFormat "2006-01-02T15:04:05Z0700" $.Hugo.BuildDate | safeHTML }}">{{ dateFormat "2006-01-02T15:04:05Z0700" $.Hugo.BuildDate  | safeHTML }}</time>
+                    datetime="{{ dateFormat "2006-01-02T15:04:05Z0700" hugo.BuildDate | safeHTML }}">{{ dateFormat "2006-01-02T15:04:05Z0700" hugo.BuildDate  | safeHTML }}</time>
             </a>
         </li>
     </ul>
