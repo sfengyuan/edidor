@@ -24,9 +24,13 @@
         <li><a href="https://gohugo.io" class="btn">Hugo, {{ hugo.Version }}</a></li>
         <li><a href="https://github.com/jacobsun/edidor" class="btn">Theme: Edidor</a></li>
         <li>
-            <a href="#" class="btn">Last build: <time
-                    datetime="{{ dateFormat "2006-01-02T15:04:05Z0700" hugo.BuildDate | safeHTML }}">{{ dateFormat "2006-01-02T15:04:05Z0700" hugo.BuildDate  | safeHTML }}</time>
-            </a>
+            {{if hugo.BuildDate }}
+                <a href="#" class="btn">Last build: <time
+                    datetime="{{ dateFormat "2006-01-02T15:04:05Z0700" hugo.BuildDate | safeHTML }}">{{ dateFormat "2006-01-02T15:04:05Z0700" hugo.BuildDate | safeHTML }}</time>
+                </a>
+            {{ else if .Site.IsServer }}
+                <a>Build date unavailable!</a>
+            {{ end}}
         </li>
     </ul>
 </footer>
