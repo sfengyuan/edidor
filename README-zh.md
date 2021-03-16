@@ -1,5 +1,5 @@
 # Edidor
-[English](https://github.com/jacobsun/edidor/blob/master/README.md)
+[English](https://github.com/sfengyuan/edidor/blob/master/README.md)
 
 自带主题颜色生成器的主题, 从营销的角度看有无限主题. 😂
 
@@ -7,18 +7,18 @@
 
 # 截图
 白色模式
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/screenshot.png)
 暗色模式
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/dark.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/dark.png)
 狂野模式
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/wild_mode.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/wild_mode.png)
 还是狂野模式
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/wild_mode2.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/wild_mode2.png)
 仍然是狂野模式
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/wild_mode3.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/wild_mode3.png)
 
 # 狂野模式
-亲自试试狂野模式吧, 不用下载安装, 到我的网站 [my site](https://ziox.xyz/). 持续点击 'Theme > Wild mode' 🙃
+亲自试试狂野模式吧, 不用下载安装, 到我的网站 [my site](https://sunfy.xyz/). 持续点击 'Theme > Wild mode' 🙃
 
 **不保证你能得到满意的配色**
 
@@ -39,12 +39,12 @@ Hugo 网站根目录运行
 
 ```
 cd themes
-git submodule add https://github.com/jacobsun/edidor
+git submodule add https://github.com/sfengyuan/edidor
 ```
 或者(这种方式, 请删除隐藏的.git文件夹)
 ```
 cd themes
-git clone https://github.com/jacobsun/edidor
+git clone https://github.com/sfengyuan/edidor
 ```
 
 # 使用
@@ -93,7 +93,7 @@ Logo文件必须是 `svg` 格式, 以后会修改, 复制到 根目录/static/im
 ```
 /*
     Hugo Edidor theme wild mode exported.
-    homepage: https://github.com/jacobsun/edidor
+    homepage: https://github.com/sfengyuan/edidor
     Usage:
     1. Throw me to your site root folder/static/css directory, you can rename me to whatever you like.
     2. Copy below code to your config file.

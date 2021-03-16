@@ -1,4 +1,4 @@
-import './css/main.scss'
+import './css/main.less'
 import { onEvent, qs } from './js/helpers'
 import {
   tryLoadMode,

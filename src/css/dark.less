@@ -1,0 +1,170 @@
+.main a {
+    color: #99CCFF;
+}
+
+.main .article-tags a {
+    background: #327E36;
+    color     : #FFF;
+}
+
+.local-info, .dialog label {
+    background: #FFFF99;
+    color     : #333;
+    box-shadow: 2px 3px 1px 1px #000;
+}
+
+/* man bg */
+body,
+.main,
+.header .menu>li:hover,
+.footer a:hover,
+.logo-link,
+.dialog {
+    background: @dark_main_bg;
+}
+
+/* main fg */
+.main,
+blockquote.twitter-tweet,
+.header .sub-menu a,
+.sidebar a,
+.taxonomy-key,
+.main .title a,
+.dialog .title {
+    color: #C6C6C7;
+}
+
+.icon {
+    background: #C6C6C7;
+}
+
+/* main minor */
+.article-meta,
+.item-meta,
+.footnotes {
+    color: #939BAB;
+}
+
+th,
+td {
+    border-bottom: 1px solid #939BAB;
+}
+
+hr {
+    border: 1px solid #939BAB;
+}
+
+.pagination {
+    background: #939BAB;
+}
+
+/* sidebar bg */
+.sidebar {
+    background: #16191D;
+}
+
+.header ul ul {
+    box-shadow: 0 0.1em 0.2em 0 #060606;
+}
+
+.header ul ul,
+.pagination a:hover {
+    background: #1A1D21;
+}
+
+code {
+    background: #1A1C21;
+}
+
+/* sidebar minor */
+.count,
+.taxonomy-key {
+    color: #939394;
+}
+
+
+/* header, footer bg */
+.header,
+.footer,
+.header .sub-menu li:hover,
+.sidebar a:hover {
+    background: #21252B;
+}
+
+/* header, footer fg */
+.header a,
+.footer a,
+.footer time,
+.pagination a {
+    color: #797D85;
+}
+
+.footer .icon {
+    background-color: #797D85;
+}
+
+.main h1,
+.main h2,
+.main h3,
+.main h4,
+.main h5,
+.main h6 {
+    text-shadow: 0 1px 1px #000;
+}
+
+.title {
+    text-shadow: 0 1px 1px #000;
+}
+
+.dialog {
+    width: 100vw;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    font-size: 1rem;
+}
+.dialog .wrapper {
+    padding: 1rem;
+}
+.dialog header, .dialog main, .dialog footer {
+    margin-bottom: 2rem;
+}
+
+.dialog header {
+    margin-top: -2rem;
+}
+.dialog div {
+    margin-bottom: 1rem;
+}
+.dialog.show {
+    height: 100vh;
+}
+
+.dialog label {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    box-shadow: none;
+}
+.dialog input {
+    padding: 0.3rem;
+}
+.dialog input, .dialog button {
+    font-size: 1.2rem;
+    float: right;
+}
+
+.dialog button {
+    padding: 0.3rem 1rem;
+    background: #3083FE;
+    color: #FFF;
+}
+
+.dialog .close-dialog {
+    font-size: 3rem;
+    background: none;
+    border: none;
+}

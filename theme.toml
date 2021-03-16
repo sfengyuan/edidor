@@ -3,13 +3,13 @@
 
 name = "edidor"
 license = "MIT"
-licenselink = "https://github.com/jacobsun/edidor/blob/master/LICENSE"
+licenselink = "https://github.com/sfengyuan/edidor/blob/master/LICENSE"
 description = "a hugo theme that looks like editors with infinite color modes"
-homepage = "https://github.com/jacobsun/edidor"
+homepage = "https://github.com/sfengyuan/edidor"
 tags = ["blog", "editor", "edidor"]
 features = ["personal", "color generator", "infinite color modes"]
 min_version = 0.40
 
 [author]
-  name = "Jacob Sun"
-  homepage = "https://ziox.xyz/"
+  name = "sunfy"
+  homepage = "https://sunfy.xyz/"

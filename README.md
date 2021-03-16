@@ -1,5 +1,5 @@
 # Edidor
-[中文](https://github.com/jacobsun/edidor/blob/master/README-zh.md)
+[中文](https://github.com/sfengyuan/edidor/blob/master/README-zh.md)
 
 A hugo theme that looks like an editor with a builtin style generator, INFINITE COLOR MODE from a market perspective. 😂
 
@@ -8,16 +8,16 @@ Thanks for [@GoHugoIO](https://twitter.com/GoHugoIO)'s [promotion](https://twitt
 
 # Screenshot
 This is the light mode.
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/screenshot.png)
 This is the dark mode.
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/dark.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/dark.png)
 
 Now this is the interesting part -- wild mode.
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/wild_mode.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/wild_mode.png)
 Wild mode too.
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/wild_mode2.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/wild_mode2.png)
 Still wild mode.
-![screenshot](https://raw.githubusercontent.com/jacobsun/edidor/master/images/wild_mode3.png)
+![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/wild_mode3.png)
 
 # Wild Mode Demo
 I don't need to post more images, you can generate it by your self. Just head to [my site](https://ziox.xyz/). Keep clicking 'Theme > Wild mode'
@@ -41,12 +41,12 @@ Inside the folder of your Hugo site run:
 
 ```
 cd themes
-git submodule add https://github.com/jacobsun/edidor
+git submodule add https://github.com/sfengyuan/edidor
 ```
 Or
 ```
 cd themes
-git clone https://github.com/jacobsun/edidor
+git clone https://github.com/sfengyuan/edidor
 ```
 
 # Usage

@@ -1,7 +1,7 @@
 export function genFile (identifier, themeName) {
   return `/*
 Hugo Edidor theme wild mode exported.
-homepage: https://github.com/jacobsun/edidor
+homepage: https://github.com/sfengyuan/edidor
 Usage:
 1. Throw me to your site root folder/static/css directory, you can rename me to whatever you like.
 2. Copy the code below to your config file.
