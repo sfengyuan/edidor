@@ -30,7 +30,7 @@ And another list.
 
 ### Third header image demo
 
-![Image](https://raw.githubusercontent.com/jacobsun/edidor/master/images/screenshot.png)
+![Image](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/screenshot.png)
 
 #### Fourth header
 

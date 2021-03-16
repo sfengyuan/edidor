@@ -1,7 +1,7 @@
 {
   "name": "edidor",
   "version": "1.1.0",
-  "description": "[中文](https://github.com/jacobsun/edidor/blob/master/README-zh.md)",
+  "description": "[中文](https://github.com/sfengyuan/edidor/blob/master/README-zh.md)",
   "main": "index.js",
   "dependencies": {
     "d3-ease": "^1.0.5",
