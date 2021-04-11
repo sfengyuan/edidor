@@ -20,7 +20,7 @@ Still wild mode.
 ![screenshot](https://raw.githubusercontent.com/sfengyuan/edidor/master/images/wild_mode3.png)
 
 # Wild Mode Demo
-I don't need to post more images, you can generate it by your self. Just head to [my site](https://ziox.xyz/). Keep clicking 'Theme > Wild mode'
+I don't need to post more images, you can generate it by your self. You can use this theme, and click `theme/wild mode`. If you wanna publish the theme to visitors, use custom theme, you can find more information below.
 
 **No guarantee for what colors you can get** 🙃
 
